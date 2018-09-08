@@ -1,0 +1,63 @@
+<%--
+  Created by IntelliJ IDEA.
+  User: TW
+  Date: 2018/8/20
+  Time: 15:16
+  To change this template use File | Settings | File Templates.
+--%>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<html>
+<head>
+    <title>test</title>
+    <style type="text/css">
+        img.wp-smiley,
+        img.emoji {
+            display: inline !important;
+            border: none !important;
+            box-shadow: none !important;
+            height: 1em !important;
+            width: 1em !important;
+            margin: 0 .07em !important;
+            vertical-align: -0.1em !important;
+            background: none !important;
+            padding: 0 !important;
+        }
+        rll-youtube-player{
+            position:relative;
+            padding-bottom:56.23%;
+            height:0;overflow:hidden;
+            max-width:100%;
+            background:#000;
+            margin:5px
+        }
+        html { margin-top: 32px !important; }
+        * html body { margin-top: 32px !important; }
+        @media screen and ( max-width: 782px ) {
+            html { margin-top: 46px !important; }
+            * html body { margin-top: 46px !important; }
+        }
+    </style>
+</head>
+<body>
+<div id="editor">
+    <img class="size-medium wp-image-96 aligncenter" src="http://host805107773.s495.pppf.com.cn/wp-content/uploads/2018/07/wallhaven-657118-300x188.jpg" alt="" width="300" height="188" />
+    <p style="text-align: center;">欢迎光临。</p>
+</div>
+<button onclick="exportWord()" id="buttonExport">导出word</button>
+
+<script src="js/jquery.min.js" type="text/javascript"></script>
+<script src="js/fileSaver.js" type="text/javascript" ></script>
+<script src="js/jquery.wordexport.js" type="text/javascript"></script>
+<script type="text/javascript">
+    // 导出doc
+    function exportWord() {
+        console.info("导出文件开始");
+        $("#buttonExport").hide();
+        $("#editor").wordExport();
+        $("#buttonExport").show();
+        console.info("导出完成");
+    }
+
+</script>
+</body>
+</html>
