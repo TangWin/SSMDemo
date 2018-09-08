@@ -14,7 +14,7 @@
             <dataSource type="POOLED">
                 <property name="username" value="root"/>
                 <property name="password" value="root"/>
-                <property name="driver" value="com.mysql.jdbc.Drive"/>
+                <property name="driver" value="com.mysql.jdbc.Driver"/>
                 <property name="url" value="jdbc:mysql://192.168.0.43:3306/qinzixx_dev1"/>
             </dataSource>
         </environment>
