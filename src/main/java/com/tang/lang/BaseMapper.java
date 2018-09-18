@@ -1,4 +1,4 @@
-package com.tang.mapper;
+package com.tang.lang;
 
 import org.apache.ibatis.annotations.Param;
 
