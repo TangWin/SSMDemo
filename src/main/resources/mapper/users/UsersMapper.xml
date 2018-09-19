@@ -26,6 +26,55 @@
     from t_users
     where USER_ID = #{userId,jdbcType=INTEGER}
   </select>
+
+  <select id="getAll" useCache="false" resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List" />
+    from t_users
+    <where>
+      <if test="userId != null">
+        AND {userId,jdbcType=INTEGER}
+      </if>
+      <if test="username != null">
+        AND {username,jdbcType=VARCHAR}
+      </if>
+      <if test="password != null">
+        AND {password,jdbcType=VARCHAR}
+      </if>
+      <if test="phone != null">
+        AND {phone,jdbcType=VARCHAR}
+      </if>
+      <if test="enabled != null">
+        AND {enabled,jdbcType=VARCHAR}
+      </if>
+      <if test="accountNonExpired != null">
+        AND {accountNonExpired,jdbcType=VARCHAR}
+      </if>
+      <if test="accountNonLocked != null">
+        AND {accountNonLocked,jdbcType=VARCHAR}
+      </if>
+      <if test="credentialsNonExpired != null">
+        AND {credentialsNonExpired,jdbcType=VARCHAR}
+      </if>
+      <if test="createBy != null">
+        AND {createBy,jdbcType=VARCHAR}
+      </if>
+      <if test="createTime != null">
+        AND {createTime,jdbcType=TIMESTAMP}
+      </if>
+      <if test="remark != null">
+        AND {remark,jdbcType=VARCHAR}
+      </if>
+      <if test="lastLoginTime != null">
+        AND {lastLoginTime,jdbcType=TIMESTAMP}
+      </if>
+      <if test="vipValidDate != null">
+        AND {vipValidDate,jdbcType=TIMESTAMP}
+      </if>
+    </where>
+  </select>
+
+
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
     delete from t_users
     where USER_ID = #{userId,jdbcType=INTEGER}

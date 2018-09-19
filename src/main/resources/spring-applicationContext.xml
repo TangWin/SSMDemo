@@ -34,12 +34,12 @@
     <bean id="sessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
         <property name="configLocation" value="classpath:mybatis.xml"></property>
         <property name="dataSource" ref="dataSourceProxy"/>
-        <property name="mapperLocations" value="classpath:mapper/*Mapper.xml"></property>
+        <property name="mapperLocations" value="classpath:mapper/**/*Mapper.xml"></property>
     </bean>
 
     <!-- 通过扫描的模式，扫描目录在com.tang.mapper任意目录下的mapper下 -->
     <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
-        <property name="basePackage" value="com.tang.mapper"></property>
+        <property name="basePackage" value="com.tang.**.*mapper"></property>
         <property name="sqlSessionFactoryBeanName" value="sessionFactory"></property>
     </bean>
 

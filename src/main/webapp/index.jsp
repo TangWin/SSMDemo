@@ -9,34 +9,6 @@
 <html>
 <head>
     <title>test</title>
-    <style type="text/css">
-        img.wp-smiley,
-        img.emoji {
-            display: inline !important;
-            border: none !important;
-            box-shadow: none !important;
-            height: 1em !important;
-            width: 1em !important;
-            margin: 0 .07em !important;
-            vertical-align: -0.1em !important;
-            background: none !important;
-            padding: 0 !important;
-        }
-        rll-youtube-player{
-            position:relative;
-            padding-bottom:56.23%;
-            height:0;overflow:hidden;
-            max-width:100%;
-            background:#000;
-            margin:5px
-        }
-        html { margin-top: 32px !important; }
-        * html body { margin-top: 32px !important; }
-        @media screen and ( max-width: 782px ) {
-            html { margin-top: 46px !important; }
-            * html body { margin-top: 46px !important; }
-        }
-    </style>
 </head>
 <body>
 <div id="editor">
