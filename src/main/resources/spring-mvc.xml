@@ -12,10 +12,16 @@
         <!--消息转换器，为responseBody注解返回数据做处理-->
         <mvc:message-converters>
             <bean class="org.springframework.http.converter.StringHttpMessageConverter">
-                <property name="supportedMediaTypes" value="text/html;charset=UTF-8"/>
+                <property name="supportedMediaTypes">
+                    <list>
+                        <!--<value>text/html;charset=UTF-8</value>-->
+                        <value>application/json;charset=UTF-8</value>
+                    </list>
+                </property>
             </bean>
         </mvc:message-converters>
     </mvc:annotation-driven>
+
 
 
     <!--扫描包规则-->
@@ -34,6 +40,26 @@
         <property name="suffix" value=".jsp"/>
     </bean>
 
+    <bean id="jacksonMessageConverter"
 
+          class="org.springframework.http.converter.json.MappingJackson2HttpMessageConverter">
+
+        <!--解决 HttpMediaTypeNotAcceptableException: Could not findacceptable
+
+                  representation -->
+
+        <property name="supportedMediaTypes">
+
+        <list>
+
+            <value>text/html;charset=UTF-8</value>
+
+            <value>application/json;charset=UTF-8</value>
+
+        </list>
+
+    </property>
+
+</bean>
 
 </beans>
